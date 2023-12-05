@@ -1,4 +1,4 @@
-package day_1
+package be.jobulcke.aoc.day1
 
 import org.assertj.core.api.Assertions.assertThat
 import org.junit.jupiter.api.Test

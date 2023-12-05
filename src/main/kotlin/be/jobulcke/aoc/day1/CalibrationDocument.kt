@@ -1,4 +1,4 @@
-package day_1
+package be.jobulcke.aoc.day1
 
 class CalibrationDocument(private val documentLines: List<CalibrationDocumentLine>) {
     val calibrationValue: Int

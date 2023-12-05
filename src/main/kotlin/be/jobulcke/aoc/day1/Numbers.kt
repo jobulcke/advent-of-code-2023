@@ -1,4 +1,4 @@
-package day_1
+package be.jobulcke.aoc.day1
 
 enum class Numbers(val stringRepresentation: String, val integerValue: Char) {
     ONE("one", '1'),

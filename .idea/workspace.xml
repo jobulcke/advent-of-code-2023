@@ -4,27 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6eac9054-9a28-4c47-8553-06664a8826a6" name="Changes" comment="feat: implementation of Day 1">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day1/CalibrationDocumentLine.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day2/Application.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day2/CubeColor.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day2/Game.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day2/GameSubset.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/day2/games-input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/be/jobulcke/aoc/day2/GameSubsetTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/be/jobulcke/aoc/day2/GameTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/day2/game-examples.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6eac9054-9a28-4c47-8553-06664a8826a6" name="Changes" comment="chore: gitignore updated">
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day3/Application.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day3/EngineSchematic.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day3/Position.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/day1/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/resources/day3/input.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/be/jobulcke/aoc/day3/EngineSchematicTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/kotlin/be/jobulcke/aoc/day3/PositionTest.kt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/day3/engine-schematic-example.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/resources/day3/engine-schematic-input-example.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/day_1/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day1/Application.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/day_1/CalibrationDocument.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day1/CalibrationDocument.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/day_1/CalibrationDocumentLine.kt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/day_1/Numbers.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day1/Numbers.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/calibration-document-input.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/day1/calibration-document-input.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/day_1/CalibrationDocumentLineTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/be/jobulcke/aoc/day1/CalibrationDocumentLineTest.kt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/kotlin/day_1/CalibrationDocumentTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/be/jobulcke/aoc/day1/CalibrationDocumentTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day1/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day1/Application.kt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,9 +45,11 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Kotlin Enum" />
+        <option value="Class" />
+        <option value="Kotlin File" />
         <option value="Kotlin Class" />
         <option value="JUnit5 Test Class" />
-        <option value="Kotlin Enum" />
       </list>
     </option>
   </component>
@@ -72,40 +65,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SONARLINT_PRECOMMIT_ANALYSIS&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary&quot;: &quot;JUnit5&quot;,
-    &quot;com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5&quot;: &quot;&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settingsdialog.project.gradle&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SONARLINT_PRECOMMIT_ANALYSIS": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit5",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit5": "",
+    "git-widget-placeholder": "master",
+    "last.edited.regexp": "@",
+    "last_opened_file_path": "C:/Users/jonasbul/Documents/repos/advent-of-code-2023/src/main/resources/day1",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.lookFeel",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\jonasbul\Documents\repos\advent-of-code-2023\src\main\resources\day1" />
+    </key>
     <key name="CreateTestDialog.Recents.Supers">
       <recent name="" />
     </key>
     <key name="MoveKotlinTopLevelDeclarationsDialog.RECENTS_KEY">
+      <recent name="be.jobulcke.aoc.day3" />
       <recent name="day_1" />
     </key>
     <key name="CreateTestDialog.RecentsKey">
+      <recent name="be.jobulcke.aoc.day3" />
       <recent name="be.jobulcke.day_2" />
       <recent name="day_1" />
     </key>
   </component>
   <component name="RunManager" selected="Kotlin.ApplicationKt">
-    <configuration name="GameTest.given_Game_when_getFewestPossibleCubes_then_ReturnMap" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="EngineSchematicTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -118,7 +119,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;be.jobulcke.aoc.day2.GameTest.given_Game_when_getFewestPossibleCubes_then_ReturnMap&quot;" />
+            <option value="&quot;be.jobulcke.aoc.day3.EngineSchematicTest&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -129,7 +130,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="GameTest.given_Game_when_getPower_then_ReturnInt" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="EngineSchematicTest.given_SmallEngineSchematicLines_when_GetSumOfPartNumber_then_ReturnSum" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -142,7 +143,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;be.jobulcke.aoc.day2.GameTest.given_Game_when_getPower_then_ReturnInt&quot;" />
+            <option value="&quot;be.jobulcke.aoc.day3.EngineSchematicTest.given_SmallEngineSchematicLines_when_GetSumOfPartNumber_then_ReturnSum&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -153,7 +154,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="GameTest.given_ListOfGame_when_getSumOfPowers_then_ReturnInteger" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PositionTest.given_ColumnAndRowMax2_test_GetAdjacentPositions" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -166,7 +167,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;be.jobulcke.aoc.day2.GameTest.given_ListOfGame_when_getSumOfPowers_then_ReturnInteger&quot;" />
+            <option value="&quot;be.jobulcke.aoc.day3.PositionTest.given_ColumnAndRowMax2_test_GetAdjacentPositions&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -177,7 +178,7 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
-    <configuration name="Tests in 'be.jobulcke.aoc.day2'" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+    <configuration name="PositionTest.test_GetAdjacentPositions" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -190,7 +191,7 @@
           <list>
             <option value=":test" />
             <option value="--tests" />
-            <option value="&quot;be.jobulcke.aoc.day2.*&quot;" />
+            <option value="&quot;be.jobulcke.aoc.day3.PositionTest.test_GetAdjacentPositions&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -202,7 +203,7 @@
       <method v="2" />
     </configuration>
     <configuration name="ApplicationKt" type="JetRunConfigurationType" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="be.jobulcke.aoc.day2.ApplicationKt" />
+      <option name="MAIN_CLASS_NAME" value="be.jobulcke.aoc.day3.ApplicationKt" />
       <module name="advent-of-code-2023.main" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -211,10 +212,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.ApplicationKt" />
-        <item itemvalue="Gradle.GameTest.given_ListOfGame_when_getSumOfPowers_then_ReturnInteger" />
-        <item itemvalue="Gradle.GameTest.given_Game_when_getPower_then_ReturnInt" />
-        <item itemvalue="Gradle.GameTest.given_Game_when_getFewestPossibleCubes_then_ReturnMap" />
-        <item itemvalue="Gradle.Tests in 'be.jobulcke.aoc.day2'" />
+        <item itemvalue="Gradle.EngineSchematicTest" />
+        <item itemvalue="Gradle.EngineSchematicTest.given_SmallEngineSchematicLines_when_GetSumOfPartNumber_then_ReturnSum" />
+        <item itemvalue="Gradle.PositionTest.test_GetAdjacentPositions" />
+        <item itemvalue="Gradle.PositionTest.given_ColumnAndRowMax2_test_GetAdjacentPositions" />
       </list>
     </recent_temporary>
   </component>
@@ -231,6 +232,10 @@
       <workItem from="1701760719804" duration="3857000" />
       <workItem from="1701769428501" duration="197000" />
       <workItem from="1701769853383" duration="8000" />
+      <workItem from="1701785479617" duration="6538000" />
+      <workItem from="1701880738204" duration="15829000" />
+      <workItem from="1701992759325" duration="16533000" />
+      <workItem from="1702384121893" duration="5761000" />
     </task>
     <task id="LOCAL-00001" summary="chore: initial commit">
       <option name="closed" value="true" />
@@ -248,7 +253,31 @@
       <option name="project" value="LOCAL" />
       <updated>1701626508043</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="feat: implementation of Day 2 + package renaming">
+      <option name="closed" value="true" />
+      <created>1701785723841</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1701785723841</updated>
+    </task>
+    <task id="LOCAL-00004" summary="chore: gitignore updated">
+      <option name="closed" value="true" />
+      <created>1701790992082</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1701790992082</updated>
+    </task>
+    <task id="LOCAL-00005" summary="chore: gitignore updated">
+      <option name="closed" value="true" />
+      <created>1701791048543</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1701791048543</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -257,7 +286,9 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="chore: initial commit" />
     <MESSAGE value="feat: implementation of Day 1" />
-    <option name="LAST_COMMIT_MESSAGE" value="feat: implementation of Day 1" />
+    <MESSAGE value="feat: implementation of Day 2 + package renaming" />
+    <MESSAGE value="chore: gitignore updated" />
+    <option name="LAST_COMMIT_MESSAGE" value="chore: gitignore updated" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -284,6 +315,16 @@
           <url>file://$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day2/Game.kt</url>
           <line>12</line>
           <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day3/EngineSchematic.kt</url>
+          <line>57</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="kotlin-line">
+          <url>file://$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day3/EngineSchematic.kt</url>
+          <line>36</line>
+          <option name="timeStamp" value="12" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

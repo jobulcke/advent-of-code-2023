@@ -4,18 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6eac9054-9a28-4c47-8553-06664a8826a6" name="Changes" comment="chore: gitignore updated">
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day3/Application.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day3/EngineSchematic.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day3/Position.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/day1/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/day3/input.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/be/jobulcke/aoc/day3/EngineSchematicTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/kotlin/be/jobulcke/aoc/day3/PositionTest.kt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/day3/engine-schematic-example.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/resources/day3/engine-schematic-input-example.txt" afterDir="false" />
+    <list default="true" id="6eac9054-9a28-4c47-8553-06664a8826a6" name="Changes" comment="feat: day 3 part 1 implemented">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day1/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day1/Application.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day1/CalibrationDocumentLine.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day1/CalibrationDocumentLine.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day3/Application.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day3/Application.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day3/EngineSchematic.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day3/EngineSchematic.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/kotlin/be/jobulcke/aoc/day3/EngineSchematicTest.kt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/kotlin/be/jobulcke/aoc/day3/EngineSchematicTest.kt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/day3/engine-schematic-example.txt" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/day3/engine-schematic-example.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +125,30 @@
       <RunAsTest>true</RunAsTest>
       <method v="2" />
     </configuration>
+    <configuration name="EngineSchematicTest.given_LargeEngineSchematicLines_when_GetGearsRatio_then_ReturnList" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;be.jobulcke.aoc.day3.EngineSchematicTest.given_LargeEngineSchematicLines_when_GetGearsRatio_then_ReturnList&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <RunAsTest>true</RunAsTest>
+      <method v="2" />
+    </configuration>
     <configuration name="EngineSchematicTest.given_SmallEngineSchematicLines_when_GetSumOfPartNumber_then_ReturnSum" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -144,30 +163,6 @@
             <option value=":test" />
             <option value="--tests" />
             <option value="&quot;be.jobulcke.aoc.day3.EngineSchematicTest.given_SmallEngineSchematicLines_when_GetSumOfPartNumber_then_ReturnSum&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <RunAsTest>true</RunAsTest>
-      <method v="2" />
-    </configuration>
-    <configuration name="PositionTest.given_ColumnAndRowMax2_test_GetAdjacentPositions" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;be.jobulcke.aoc.day3.PositionTest.given_ColumnAndRowMax2_test_GetAdjacentPositions&quot;" />
           </list>
         </option>
         <option name="vmOptions" />
@@ -212,10 +207,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Kotlin.ApplicationKt" />
+        <item itemvalue="Gradle.EngineSchematicTest.given_LargeEngineSchematicLines_when_GetGearsRatio_then_ReturnList" />
         <item itemvalue="Gradle.EngineSchematicTest" />
         <item itemvalue="Gradle.EngineSchematicTest.given_SmallEngineSchematicLines_when_GetSumOfPartNumber_then_ReturnSum" />
         <item itemvalue="Gradle.PositionTest.test_GetAdjacentPositions" />
-        <item itemvalue="Gradle.PositionTest.given_ColumnAndRowMax2_test_GetAdjacentPositions" />
       </list>
     </recent_temporary>
   </component>
@@ -235,7 +230,7 @@
       <workItem from="1701785479617" duration="6538000" />
       <workItem from="1701880738204" duration="15829000" />
       <workItem from="1701992759325" duration="16533000" />
-      <workItem from="1702384121893" duration="5761000" />
+      <workItem from="1702384121893" duration="10474000" />
     </task>
     <task id="LOCAL-00001" summary="chore: initial commit">
       <option name="closed" value="true" />
@@ -277,7 +272,15 @@
       <option name="project" value="LOCAL" />
       <updated>1701791048543</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="feat: day 3 part 1 implemented">
+      <option name="closed" value="true" />
+      <created>1702391292319</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1702391292319</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -288,7 +291,8 @@
     <MESSAGE value="feat: implementation of Day 1" />
     <MESSAGE value="feat: implementation of Day 2 + package renaming" />
     <MESSAGE value="chore: gitignore updated" />
-    <option name="LAST_COMMIT_MESSAGE" value="chore: gitignore updated" />
+    <MESSAGE value="feat: day 3 part 1 implemented" />
+    <option name="LAST_COMMIT_MESSAGE" value="feat: day 3 part 1 implemented" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -318,13 +322,11 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="kotlin-line">
           <url>file://$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day3/EngineSchematic.kt</url>
-          <line>57</line>
-          <option name="timeStamp" value="11" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="kotlin-line">
-          <url>file://$PROJECT_DIR$/src/main/kotlin/be/jobulcke/aoc/day3/EngineSchematic.kt</url>
-          <line>36</line>
-          <option name="timeStamp" value="12" />
+          <line>34</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="15" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

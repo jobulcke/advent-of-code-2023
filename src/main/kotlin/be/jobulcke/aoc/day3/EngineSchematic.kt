@@ -4,45 +4,56 @@ class EngineSchematic(private val schematicLines: List<String>) {
     private val lineLength = schematicLines.first().length
     private val lines = schematicLines.size
 
-    /**
-     * @return list of all the positions where a number is adjacent to a symbol
-     */
-    private val positionsOfAdjacentNumbers: List<Position>
-        get() {
-            val positions = mutableListOf<Position>()
-            schematicLines.forEachIndexed { rowIndex, line ->
-                line.forEachIndexed { columnIndex, char ->
-                    if (!char.isDigit() && char != '.') {
-                        positions.add(Position(rowIndex, columnIndex))
-                    }
-                }
-            }
-            return positions
-                .flatMap { it.getAdjacentPositions(lines - 1, lineLength - 1) }
-                .distinct()
-                .filter { schematicLines[it].isDigit() }
-        }
-
     val partNumbers: List<Int>
-        get() {
-            val partNumbers = mutableListOf<Int>()
-            val seenPositions = mutableListOf<Position>()
+        get() = getSymbolPositions { !it.isDigit() && it != '.' }
+            .flatMap { it.getAdjacentPositions(lines - 1, lineLength - 1) }
+            .distinct()
+            .filter { schematicLines[it].isDigit() }
+            .let(::extractNumbers)
 
-            positionsOfAdjacentNumbers.forEach {
-                if (seenPositions.contains(it)) {
-                    return@forEach
+    val gearsRatios: List<Int>
+        get() =
+            getSymbolPositions { it == '*' }
+                .map { position ->
+                    position.getAdjacentPositions(lines - 1, lineLength - 1)
+                        .distinct()
+                        .filter { schematicLines[it].isDigit() }
+                        .let(::extractNumbers)
                 }
-                var cursor = findStartPosition(it)
-                var partNumberString = ""
-                while (schematicLines[cursor].isDigit()) {
-                    partNumberString += schematicLines[cursor]
-                    seenPositions.add(cursor)
-                    cursor++
+                .filter { it.size == 2 }
+                .map { it.reduce { a, b -> a * b } }
+
+    private fun getSymbolPositions(predicate: (Char) -> Boolean): List<Position> {
+        val positions = mutableListOf<Position>()
+        schematicLines.forEachIndexed { rowIndex, line ->
+            line.forEachIndexed { columnIndex, char ->
+                if (predicate(char)) {
+                    positions.add(Position(rowIndex, columnIndex))
                 }
-                partNumbers.add(partNumberString.toInt())
             }
-            return partNumbers
         }
+        return positions
+    }
+
+    private fun extractNumbers(positions: List<Position>): List<Int> {
+        val partNumbers = mutableListOf<Int>()
+        val seenPositions = mutableListOf<Position>()
+
+        positions.forEach {
+            if (seenPositions.contains(it)) {
+                return@forEach
+            }
+            var cursor = findStartPosition(it)
+            var partNumberString = ""
+            while (schematicLines[cursor].isDigit()) {
+                partNumberString += schematicLines[cursor]
+                seenPositions.add(cursor)
+                cursor++
+            }
+            partNumbers.add(partNumberString.toInt())
+        }
+        return partNumbers
+    }
 
     private fun findStartPosition(adjacentNumberPosition: Position): Position {
         var cursor = adjacentNumberPosition.moveLeft()

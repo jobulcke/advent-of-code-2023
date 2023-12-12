@@ -1,8 +1,5 @@
 package be.jobulcke.aoc.day1
 
-import java.util.function.BiFunction
-import java.util.function.Function
-
 class CalibrationDocumentLine(private val line: String) {
     val value: Int
         get() {
@@ -15,16 +12,16 @@ class CalibrationDocumentLine(private val line: String) {
 
     private fun extractDigitFromSingleLine(
         line: String,
-        indicesExtractor: Function<String, IntProgression>,
-        wordlyDigitExtractor: BiFunction<String, Int, Char?>
+        indicesExtractor: (String) -> IntProgression,
+        wordlyDigitExtractor: (String, Int) -> Char?
     ): Char {
-        for (i in indicesExtractor.apply(line)) {
+        for (i in indicesExtractor(line)) {
             val char = line[i]
             val intValue = char.digitToIntOrNull()
             if (intValue != null) {
                 return char
             }
-            val wordlyDigitChar = wordlyDigitExtractor.apply(line, i)
+            val wordlyDigitChar = wordlyDigitExtractor(line, i)
             if (wordlyDigitChar != null) {
                 return wordlyDigitChar
             }

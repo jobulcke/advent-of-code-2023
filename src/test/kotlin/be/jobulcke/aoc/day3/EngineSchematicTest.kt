@@ -62,4 +62,14 @@ class EngineSchematicTest {
 
         assertThat(actualSum).isEqualTo(expectedSum)
     }
+
+    @Test
+    fun given_LargeEngineSchematicLines_when_GetGearsRatio_then_ReturnList() {
+        val lines = Path("src/test/resources/day3/engine-schematic-example.txt").readLines()
+        val engine = EngineSchematic(lines)
+
+        val gearRatios = engine.gearsRatios
+
+        assertThat(gearRatios).containsExactlyInAnyOrder(16345, 451490)
+    }
 }

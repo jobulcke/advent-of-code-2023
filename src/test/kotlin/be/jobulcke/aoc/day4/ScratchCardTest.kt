@@ -57,7 +57,7 @@ class ScratchCardTest {
         fun scratchCardsWithPoints(): List<Arguments> {
             val points = mapOf(1 to 8, 2 to 2, 3 to 2, 4 to 1, 5 to 0, 6 to 0)
 
-            return Path("src/test/resources/day4/example-input.txt").readLines()
+            return Path("src/test/resources/day4.txt").readLines()
                 .map(ScratchCard::fromLine)
                 .map { Arguments.of(it, points[it.id]) }
         }
@@ -66,7 +66,7 @@ class ScratchCardTest {
         fun scratchCardsWithWonCards(): List<Arguments> {
             val wonCards = mapOf(1 to 2..5, 2 to 3..4, 3 to 4..5, 4 to 5..5, 5 to null, 6 to null)
 
-            return Path("src/test/resources/day4/example-input.txt").readLines()
+            return Path("src/test/resources/day4.txt").readLines()
                 .map(ScratchCard::fromLine)
                 .map { Arguments.of(it, wonCards[it.id]) }
         }

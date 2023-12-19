@@ -8,7 +8,7 @@ import kotlin.io.path.readLines
 class ScratchCardCheckerKtTest {
     @Test
     fun test_checkCards() {
-        val scratchCards = Path("src/test/resources/day4/example-input.txt").readLines()
+        val scratchCards = Path("src/test/resources/day4.txt").readLines()
             .map(ScratchCard::fromLine)
 
         val totalCards = checkCards(scratchCards)

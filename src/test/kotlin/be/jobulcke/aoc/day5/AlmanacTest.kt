@@ -11,7 +11,7 @@ class AlmanacTest {
 
     @Test
     fun given_ExampleInput_when_ParseLines_then_ReturnAlmanac() {
-        val actualAlmanac = Path("src/test/resources/day5/example.txt")
+        val actualAlmanac = Path("src/test/resources/day5.txt")
             .readLines()
             .let(Almanac::parse)
 
@@ -25,7 +25,7 @@ class AlmanacTest {
 
         @BeforeEach
         fun setUp() {
-            almanac = Path("src/test/resources/day5/example.txt")
+            almanac = Path("src/test/resources/day5.txt")
                 .readLines()
                 .let(Almanac::parse)
         }

@@ -4,7 +4,7 @@ import kotlin.io.path.Path
 import kotlin.io.path.readLines
 
 fun main() {
-    val almanac = Almanac.parse(Path("src/main/resources/day5/input.txt").readLines())
+    val almanac = Almanac.parse(Path("src/main/resources/day5.txt").readLines())
 
     val lowestLocation = almanac.getLowestLocationForSimpleSeeds()
 

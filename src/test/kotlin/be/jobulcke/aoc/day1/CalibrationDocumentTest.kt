@@ -9,7 +9,7 @@ class CalibrationDocumentTest {
 
     @Test
     fun given_ExampleInput_then_Return142() {
-        val calibrationValue = Path("src/test/resources/day1/calibration-document-example.txt").readLines()
+        val calibrationValue = Path("src/test/resources/day1.txt").readLines()
             .let { CalibrationDocument.fromStringLines(it).calibrationValue }
 
         assertThat(calibrationValue).isEqualTo(142)

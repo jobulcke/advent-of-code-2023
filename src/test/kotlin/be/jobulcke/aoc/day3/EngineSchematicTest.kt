@@ -57,7 +57,7 @@ class EngineSchematicTest {
     @Test
     fun given_LargeEngineSchematicLines_when_GetSumOfPartNumber_then_ReturnSum() {
         val expectedSum = 4361
-        val lines = Path("src/test/resources/day3/engine-schematic-example.txt").readLines()
+        val lines = Path("src/test/resources/day3.txt").readLines()
         val actualSum = EngineSchematic(lines).partNumbers.sum()
 
         assertThat(actualSum).isEqualTo(expectedSum)
@@ -65,7 +65,7 @@ class EngineSchematicTest {
 
     @Test
     fun given_LargeEngineSchematicLines_when_GetGearsRatio_then_ReturnList() {
-        val lines = Path("src/test/resources/day3/engine-schematic-example.txt").readLines()
+        val lines = Path("src/test/resources/day3.txt").readLines()
         val engine = EngineSchematic(lines)
 
         val gearRatios = engine.gearsRatios

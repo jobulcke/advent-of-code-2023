@@ -4,7 +4,7 @@ import kotlin.io.path.Path
 import kotlin.io.path.readLines
 
 fun main() {
-    val games =  Path("src/main/resources/day2/games-input.txt").readLines()
+    val games =  Path("src/main/resources/day2.txt").readLines()
         .map(Game::fromString)
     val gameIdsSum = games
         .filter { it.isPossibleWith(12, 13, 14) }

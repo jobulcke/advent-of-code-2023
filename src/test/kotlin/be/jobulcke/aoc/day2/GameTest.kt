@@ -59,7 +59,7 @@ class GameTest {
     }
 
     companion object {
-        private fun initGames() = Path("src/test/resources/day2/game-examples.txt").readLines().map { Game.fromString(it) }
+        private fun initGames() = Path("src/test/resources/day2.txt").readLines().map { Game.fromString(it) }
 
         @JvmStatic
         fun gamesWithFewestPossible(): List<Arguments> {

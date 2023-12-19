@@ -9,7 +9,6 @@ data class Hand(val cards: List<Card>, val bid: Int) : Comparable<Hand> {
         }
     }
 
-
     val cardsWithReplacedJokers: List<Card>
         get() {
             val highestCard = cards
@@ -18,7 +17,8 @@ data class Hand(val cards: List<Card>, val bid: Int) : Comparable<Hand> {
                 .eachCount()
                 .toSortedMap(Comparator.comparingInt { -it.value })
                 .maxByOrNull { it.value }
-                ?.key ?: Card.JOKER
+                ?.key
+                ?: Card.JOKER
             return cards.map { if (it == Card.JOKER) highestCard else it }
         }
 
@@ -39,18 +39,12 @@ data class Hand(val cards: List<Card>, val bid: Int) : Comparable<Hand> {
     companion object {
         fun parse(line: String): Hand {
             val (cards, bid) = line.split(" ")
-            return Hand(
-                cards.map(Card::fromChar),
-                bid.toInt()
-            )
+            return Hand(cards.map(Card::fromChar), bid.toInt())
         }
 
         fun parseWithJokers(line: String): Hand {
             val (cards, bid) = line.split(" ")
-            return Hand(
-                cards.map(Card::fromCharWithJoker),
-                bid.toInt()
-            )
+            return Hand(cards.map(Card::fromCharWithJoker), bid.toInt())
         }
     }
 }

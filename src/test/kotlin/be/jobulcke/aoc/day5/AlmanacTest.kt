@@ -31,24 +31,21 @@ class AlmanacTest {
         }
 
         @Test
-        fun test_GetLocations() {
-            val expectedLocations: Map<Long, Long> = mapOf(
-                79L to 82,
-                14L to 43,
-                55L to 86,
-                13L to 35
-            )
+        fun given_Almanac_when_GetLocationForSimpleSeeds_then_Return() {
+            val expectedLowestLocation: Long = 35
 
-            val actualLocations = almanac.locations
+            val actualLowestLocation = almanac.getLowestLocationForSimpleSeeds()
 
-            assertThat(actualLocations).containsExactlyEntriesOf(expectedLocations)
+            assertThat(actualLowestLocation).isEqualTo(expectedLowestLocation)
         }
 
         @Test
-        fun given_Almanac_when_GetLocationsFromRange_then_HasMinEqTo46() {
-            val lowestLocation = almanac.getLowestLocationFromRange()
+        fun given_Almanac_when_GetLowestLocationForSeedRanges_then_Return46() {
+            val expectedLowestLocation: Long = 46
 
-            assertThat(lowestLocation).isEqualTo(46)
+            val actualLowestLocation = almanac.getLowestLocationForSeedRanges()
+
+            assertThat(actualLowestLocation).isEqualTo(expectedLowestLocation)
         }
     }
 }

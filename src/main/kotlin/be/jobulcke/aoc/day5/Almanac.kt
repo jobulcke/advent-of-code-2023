@@ -4,27 +4,37 @@ data class Almanac(
     val seeds: List<Long>,
     val mappings: List<Mapping>
 ) {
-    val locations: Map<Long, Long> = seeds.associateWith(::getLocation)
-
-    fun getLowestLocationFromRange(): Long {
-        var lowest = Long.MAX_VALUE
-        for (index in seeds.indices step 2) {
-            for (seed in seeds[index]..<seeds[index] + seeds[index + 1]) {
-                val location = getLocation(seed)
-                if (location < lowest) {
-                    lowest = location
-                }
-            }
-        }
-        return lowest
+    private val seedsRanges: List<LongRange> by lazy {
+        seeds.windowed(2, 2).map { (start, length) -> start until start + length }
     }
 
-    private fun getLocation(seed: Long): Long {
-        var source = seed
-        for (mapping in mappings) {
-            source = mapping[source] ?: source
+    private val reversedMappings: List<Mapping> by lazy {
+        mappings
+            .map { mapping ->
+                val mappingRanges =
+                    mapping.mappingRanges.map { MappingRange(it.destinationStart, it.sourceStart, it.rangeLength) }
+                Mapping(mapping.name, mappingRanges)
+            }
+            .reversed()
+    }
+
+    fun getLowestLocationForSimpleSeeds(): Long = seeds.minOf(::getLocation)
+    fun getLowestLocationForSeedRanges(): Long {
+        return generateSequence(0L, Long::inc).first { location ->
+            val seed = getSeedForLocation(location)
+            seedsRanges.any { seedRange -> seed in seedRange }
         }
-        return source
+    }
+
+    private fun getLocation(seed: Long) = getDestinationForSource(seed, mappings)
+    private fun getSeedForLocation(location: Long) = getDestinationForSource(location, reversedMappings)
+
+    private fun getDestinationForSource(source: Long, mappings: List<Mapping>): Long {
+        var nextSource = source
+        for (mapping in mappings) {
+            nextSource = mapping[nextSource] ?: nextSource
+        }
+        return nextSource
     }
 
     companion object {

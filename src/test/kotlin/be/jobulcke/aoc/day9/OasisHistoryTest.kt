@@ -22,7 +22,7 @@ class OasisHistoryTest {
         val expectedSequences = listOf(listOf(0, 3, 6, 9, 12, 15, 18), listOf(3, 3, 3, 3, 3, 3), listOf(0, 0, 0, 0, 0))
         val history = OasisHistory(listOf(0, 3, 6, 9, 12, 15))
 
-        val actualSequences = history.sequencesWithPredication
+        val actualSequences = history.sequencesWithPrediction
 
         assertThat(actualSequences).isEqualTo(expectedSequences)
     }
@@ -32,7 +32,7 @@ class OasisHistoryTest {
     fun test_GetResultPrediction(results: List<Int>, expectedPredication: Int) {
         val history = OasisHistory(results)
 
-        assertThat(history.resultPredication).isEqualTo(expectedPredication)
+        assertThat(history.resultPrediction).isEqualTo(expectedPredication)
     }
 
     @Test

@@ -1,7 +1,7 @@
 package be.jobulcke.aoc.day9
 
 data class OasisHistory(val results: List<Int>) {
-    val resultPredication = sequencesWithPredication.first().last()
+    val resultPrediction = sequencesWithPrediction.first().last()
     val resultBackwardsPrediction = sequencesWithBackwardsPrediction.first().first()
     val sequences: List<List<Int>>
         get() {
@@ -12,7 +12,7 @@ data class OasisHistory(val results: List<Int>) {
             return sequences
         }
 
-    val sequencesWithPredication: List<List<Int>>
+    val sequencesWithPrediction: List<List<Int>>
         get() = calculatePrediction { dataLine, differenceLine -> dataLine + (dataLine.last() + differenceLine.last()) }
 
     val sequencesWithBackwardsPrediction: List<List<Int>>
@@ -29,12 +29,12 @@ data class OasisHistory(val results: List<Int>) {
         return nextSequence
     }
 
-    private fun calculatePrediction(predicationCalculator: (List<Int>, List<Int>) -> List<Int>): List<List<Int>> {
-        val sequencesWithPredication = mutableListOf(sequences.last() + 0)
+    private fun calculatePrediction(predictionCalculator: (List<Int>, List<Int>) -> List<Int>): List<List<Int>> {
+        val sequencesWithPrediction = mutableListOf(sequences.last() + 0)
         sequences.dropLast(1).reversed().spliterator().forEachRemaining {
-            sequencesWithPredication.add(predicationCalculator(it, sequencesWithPredication.last()))
+            sequencesWithPrediction.add(predictionCalculator(it, this.sequencesWithPrediction.last()))
         }
-        return sequencesWithPredication.reversed()
+        return this.sequencesWithPrediction.reversed()
     }
 
     companion object {

@@ -1,14 +1,21 @@
 package be.jobulcke.aoc.day8
 
 data class Network(val directions: CharArray, val nodes: List<Node>) {
+    val stepsToEndNode: Int
+        get() = getStepsToEndNode(nodes.first { it.value == "AAA" }) { it.value == "ZZZ" }
+    val allStepsToEndNodes: Long
+        get() = nodes
+            .filter { it.value.endsWith('A') }
+            .map { startNode -> getStepsToEndNode(startNode) { it.value.endsWith('Z') } }
+            .lcm()
 
     constructor(directions: String, nodes: List<Node>) : this(directions.toCharArray(), nodes)
 
-    fun getStepsToEndNode(): Int {
+    private fun getStepsToEndNode(startNode: Node, endNodeFilter: (Node) -> Boolean): Int {
         var directionsIter = directions.iterator()
-        var nextNode = nodes.first { it.value == Node.START_NODE_VALUE }
+        var nextNode = startNode
         var counter = 0
-        while (nextNode.value != Node.END_NODE_VALUE) {
+        while (!endNodeFilter(nextNode)) {
             if (!directionsIter.hasNext()) {
                 directionsIter = directions.iterator()
             }

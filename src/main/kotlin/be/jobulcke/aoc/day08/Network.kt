@@ -1,30 +1,43 @@
 package be.jobulcke.aoc.day08
 
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.async
+import kotlinx.coroutines.flow.asFlow
+import kotlinx.coroutines.flow.map
+import kotlinx.coroutines.runBlocking
+
 data class Network(val directions: CharArray, val nodes: List<Node>) {
     val stepsToEndNode: Int
-        get() = getStepsToEndNode(nodes.first { it.value == "AAA" }) { it.value == "ZZZ" }
+        get() = runBlocking{ getStepsToEndNode(nodes.first { it.value == "AAA" }) { it.value == "ZZZ" } }
+
     val allStepsToEndNodes: Long
-        get() = nodes
-            .filter { it.value.endsWith('A') }
-            .map { startNode -> getStepsToEndNode(startNode) { it.value.endsWith('Z') } }
-            .lcm()
+        get() = runBlocking {
+            nodes
+                .filter { it.value.endsWith('A') }
+                .asFlow()
+                .map { startNode -> getStepsToEndNode(startNode) { it.value.endsWith('Z') } }
+                .lcm()
+        }
 
     constructor(directions: String, nodes: List<Node>) : this(directions.toCharArray(), nodes)
 
-    private fun getStepsToEndNode(startNode: Node, endNodeFilter: (Node) -> Boolean): Int {
-        var directionsIter = directions.iterator()
-        var nextNode = startNode
-        var counter = 0
-        while (!endNodeFilter(nextNode)) {
-            if (!directionsIter.hasNext()) {
-                directionsIter = directions.iterator()
-            }
-            val nextValue = nextNode.getNextValue(directionsIter.nextChar())
-            counter++
-            nextNode = nodes.first { it.value == nextValue }
-
+    private suspend fun getStepsToEndNode(startNode: Node, endNodeFilter: (Node) -> Boolean): Int {
+        return runBlocking(Dispatchers.Default) {
+            async {
+                var directionsIter = directions.iterator()
+                var nextNode = startNode
+                var counter = 0
+                while (!endNodeFilter(nextNode)) {
+                    if (!directionsIter.hasNext()) {
+                        directionsIter = directions.iterator()
+                    }
+                    val nextValue = nextNode.getNextValue(directionsIter.nextChar())
+                    counter++
+                    nextNode = nodes.first { it.value == nextValue }
+                }
+                counter
+            }.await()
         }
-        return counter
     }
 
     override fun equals(other: Any?): Boolean {

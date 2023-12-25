@@ -22,19 +22,16 @@ data class OasisHistory(val results: List<Int>) {
 
     private fun calculateNextSequence(sequence: List<Int>): List<Int> {
         val nextSequence = mutableListOf<Int>()
-        sequence.indices.drop(1).spliterator().forEachRemaining { i ->
-            val diff = sequence[i] - sequence[i - 1]
-            nextSequence.add(diff)
-        }
+        sequence.indices.drop(1).forEach { nextSequence.add(sequence[it] - sequence[it - 1]) }
         return nextSequence
     }
 
     private fun calculatePrediction(predictionCalculator: (List<Int>, List<Int>) -> List<Int>): List<List<Int>> {
-        val sequencesWithPrediction = mutableListOf(sequences.last() + 0)
-        sequences.dropLast(1).reversed().spliterator().forEachRemaining {
-            sequencesWithPrediction.add(predictionCalculator(it, this.sequencesWithPrediction.last()))
+        val calculatedSequences = mutableListOf(sequences.last() + 0)
+        sequences.dropLast(1).reversed().forEach {
+            calculatedSequences.add(predictionCalculator(it, calculatedSequences.last()))
         }
-        return this.sequencesWithPrediction.reversed()
+        return calculatedSequences.reversed()
     }
 
     companion object {

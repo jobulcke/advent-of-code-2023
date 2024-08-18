@@ -23,7 +23,8 @@ class HolidayAsciiStringHasherTest {
         "HASH" to 52,
         "rn=1" to 30,
         "cm-" to 253,
-        "ot=7" to 231
+        "ot=7" to 231,
+        "rn" to 0
     )
         .map { (input, expectedHash) ->
             dynamicTest("given $input, when I convert to Holiday ASCII Hash, then I receive $expectedHash") {

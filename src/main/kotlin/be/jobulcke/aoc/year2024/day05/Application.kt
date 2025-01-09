@@ -4,7 +4,7 @@ import kotlin.io.path.Path
 import kotlin.io.path.readText
 
 fun main() {
-    val safetyManual = SafetyManual.parse(Path("src/main/resources/2023/2024/day5.txt").readText())
+    val safetyManual = SafetyManual.parse(Path("src/main/resources/2024/day5.txt").readText())
 
     val sumOfMiddlePagesOfCorrectInstructions = safetyManual.getValidInstructions().sumOf { it.middlePage }
 
